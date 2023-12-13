@@ -13,11 +13,9 @@ int _exe(char *content, stack_t **h, unsigned int c, FILE *f)
 		{"push", _push}, {"pall", _pint},
 		{"pop", _pop}, {"swap", _swap},
 		{"add", _add}, {"nop", _nop},
-		{"sub", _sub}, {"div", _div},
-		{"mul", _mul}, {"mod", _mod},
-		{"pchar", _pchar}, {"pstr", _pstr},
-		{"rot1", _rot1}, {"rot2", _rot2},
-		{"queue", _queue}, {"stack", print_top},
+		{"sub", _sub}, {"rot1", _rot1},
+		{"rot2", _rot2}, {"queue", _queue},
+		{"stack", print_top},
 		{NULL, NULL}
 	};
 	unsigned int j = 0;

@@ -13,11 +13,11 @@ void add_node(stack_t **h, int n)
 	node = malloc(sizeof(stack_t));
 	if (node == NULL)
 	{
-		printf("Can't create a node");
+		printf("Error\n");
 		exit(0);
 	}
 	if (tmp)
-		tmp->next = node;
+		tmp->prev = node;
 	node->n = n;
 	node->next = *h;
 	node->prev = NULL;
