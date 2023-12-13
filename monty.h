@@ -75,7 +75,7 @@ void f_pchar(stack_t **head, unsigned int counter);
 void f_pstr(stack_t **head, unsigned int counter);
 void _rot1(stack_t **h, unsigned int n);
 void _rot2(stack_t **h, __attribute__((unused)) unsigned int c);
-void addqueue(stack_t **head, int n);
-void f_queue(stack_t **head, unsigned int counter);
+void add_queue(stack_t **h, int n);
+void _queue(stack_t **h, unsigned int c);
 void print_top(stack_t **h, unsigned int n);
 #endif
