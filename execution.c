@@ -10,7 +10,7 @@
 int _exe(char *content, stack_t **h, unsigned int c, FILE *f)
 {
 	instruction_t opst[] = {
-		{"push", _push}, {"pall", _pint},
+		{"push", _push}, {"pall", _pall},
 		{"pint", _pint},
 		{"pop", _pop}, {"swap", _swap},
 		{"add", _add}, {"nop", _nop},

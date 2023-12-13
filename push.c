@@ -1,4 +1,5 @@
 #include "monty.h"
+
 /**
  * _push - push node into the stack
  * @h: head pointer

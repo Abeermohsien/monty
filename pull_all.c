@@ -2,13 +2,13 @@
 /**
  * _pall - prints the stack
  * @h: head
- * @n: line number
+ * @c: line number
  * Return: void
  */
-void _pall(stack_t **h, unsigned int n)
+void _pall(stack_t **h, unsigned int c)
 {
 	stack_t *node;
-	(void)n;
+	(void)c;
 
 	node = *h;
 	if (node == NULL)

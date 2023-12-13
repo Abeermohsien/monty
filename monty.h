@@ -61,7 +61,7 @@ char *_realloc(char *ptr, unsigned int old_size, unsigned int new_size);
 ssize_t getstdin(char **lineptr, int file);
 char  *clean_line(char *content);
 void _push(stack_t **h, unsigned int c);
-void _pall(stack_t **h, unsigned int n);
+void _pall(stack_t **h, unsigned int c);
 void _pint(stack_t **h, unsigned int c);
 int _exe(char *content, stack_t **h, unsigned int c, FILE *f);
 void free_stack(stack_t *h);
