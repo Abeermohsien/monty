@@ -58,7 +58,7 @@ void _pall(stack_t **h, unsigned int n);
 char *_realloc(char *ptr, unsigned int old_size, unsigned int new_size);
 ssize_t getstdin(char **lineptr, int file);
 char  *clean_line(char *content);
-void f_push(stack_t **head, unsigned int number);
+void _push(stack_t **head, unsigned int number);
 void _pall(stack_t **h, unsigned int n);
 void f_pint(stack_t **head, unsigned int number);
 int execute(char *content, stack_t **head, unsigned int counter, FILE *file);
@@ -77,5 +77,5 @@ void _rotl(stack_t **h, unsigned int n);
 void f_rotr(stack_t **head, __attribute__((unused)) unsigned int counter);
 void addqueue(stack_t **head, int n);
 void f_queue(stack_t **head, unsigned int counter);
-void _stack(stack_t **h, unsigned int n);
+void print_top(stack_t **h, unsigned int n);
 #endif
