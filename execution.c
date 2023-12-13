@@ -25,7 +25,7 @@ int _exe(char *content, stack_t **h, unsigned int c, FILE *f)
 		{"rot1", _rot1},
 		{"rot2", _rot2},
 		{"queue", _queue},
-		{"stack", _print_top},
+		{"stack", print_top},
 		{NULL, NULL}
 	};
 	unsigned int j = 0;
@@ -36,16 +36,16 @@ int _exe(char *content, stack_t **h, unsigned int c, FILE *f)
 		return (0);
 	st.arg =
 		strtok(NULL, " \n\t");
-	while (opst[i].opcode && oper)
+	while (opst[j].opcode && oper)
 	{
-		if (strcmp(oper, opst[i].opcode) == 0)
+		if (strcmp(oper, opst[j].opcode) == 0)
 		{
-			opst[i].f(h, c);
+			opst[j].f(h, c);
 			return (0);
 		}
 		i++;
 	}
-	if (oper && opst[i].opcode == NULL)
+	if (oper && opst[j].opcode == NULL)
 	{
 		fprintf (stderr, "L%d: unkown instruction %s\n", c, oper);
 		fclose(f);
