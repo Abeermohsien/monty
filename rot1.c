@@ -9,7 +9,7 @@ void _rot1(stack_t **h, __attribute__((unused))unsigned int n)
 {
 	stack_t *t, *node;
 
-	tmp = *h;
+	t = *h;
 	if (*h == NULL || (*h)->next == NULL)
 	{
 		return;
