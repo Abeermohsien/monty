@@ -14,7 +14,7 @@ void add_node(stack_t **h, int n)
 	if (node == NULL)
 	{
 		printf("Error: malloc failed\n");
-		exit(0);
+		exit(EXIT_FAILURE);
 	}
 	if (tmp)
 		tmp->prev = node;
