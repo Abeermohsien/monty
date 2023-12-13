@@ -14,6 +14,7 @@ void _queue(stack_t **h, unsigned int c)
 
 /**
  * add_queue - add node to the queue tail
+ * @h: header pointer
  * @n: new value
  * Return: void
  */

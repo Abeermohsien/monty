@@ -1,6 +1,7 @@
 #ifndef MONTY_H
 #define MONTY_H
 
+#define _GNU_SOURCE
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/types.h>
@@ -8,6 +9,7 @@
 #include <fcntl.h>
 #include <string.h>
 #include <ctype.h>
+#define _POSIX_C_SOURCE 200809L
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -61,7 +63,7 @@ char  *clean_line(char *content);
 void _push(stack_t **h, unsigned int c);
 void _pall(stack_t **h, unsigned int n);
 void _pint(stack_t **h, unsigned int c);
-int execute(char *content, stack_t **head, unsigned int counter, FILE *file);
+int _exe(char *content, stack_t **h, unsigned int c, FILE *f);
 void free_stack(stack_t *h);
 void _pop(stack_t **h, unsigned int c);
 void _swap(stack_t **h, unsigned int n);
