@@ -37,7 +37,7 @@ int main(int ac, char *av[])
 		{
 			_exe(c, &sk, cr, file);
 		}
-		free (c);
+		free(c);
 	}
 	free_stack(sk);
 	fclose(file);

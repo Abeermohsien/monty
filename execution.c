@@ -10,22 +10,14 @@
 int _exe(char *content, stack_t **h, unsigned int c, FILE *f)
 {
 	instruction_t opst[] = {
-		{"push", _push},
-		{"pall", _pint},
-		{"pop", _pop},
-		{"swap", _swap},
-		{"add", _add},
-		{"nop", _nop},
-		{"sub", _sub},
-		{"div", _div},
-		{"mul", _mul},
-		{"mod", _mod},
-		{"pchar", _pchar},
-		{"pstr", _pstr},
-		{"rot1", _rot1},
-		{"rot2", _rot2},
-		{"queue", _queue},
-		{"stack", print_top},
+		{"push", _push}, {"pall", _pint},
+		{"pop", _pop}, {"swap", _swap},
+		{"add", _add}, {"nop", _nop},
+		{"sub", _sub}, {"div", _div},
+		{"mul", _mul}, {"mod", _mod},
+		{"pchar", _pchar}, {"pstr", _pstr},
+		{"rot1", _rot1}, {"rot2", _rot2},
+		{"queue", _queue}, {"stack", print_top},
 		{NULL, NULL}
 	};
 	unsigned int j = 0;
@@ -47,7 +39,7 @@ int _exe(char *content, stack_t **h, unsigned int c, FILE *f)
 	}
 	if (oper && opst[j].opcode == NULL)
 	{
-		fprintf (stderr, "L%d: unkown instruction %s\n", c, oper);
+		fprintf(stderr, "L%d: unkown instruction %s\n", c, oper);
 		fclose(f);
 		free(content);
 		free_stack(*h);
