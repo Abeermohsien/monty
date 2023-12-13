@@ -9,7 +9,7 @@ void _pint(stack_t **h, unsigned int c)
 {
 	if (*h == NULL)
 	{
-		fprintf(stderr, "L%u: can't print, stack is empty\n", c);
+		fprintf(stderr, "L%u: can't pint, stack empty\n", c);
 		fclose(st.file);
 		free(st.content);
 		free_stack(*h);
