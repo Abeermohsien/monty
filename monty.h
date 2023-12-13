@@ -62,20 +62,25 @@ void _push(stack_t **h, unsigned int c);
 void _pall(stack_t **h, unsigned int n);
 void _pint(stack_t **h, unsigned int c);
 int execute(char *content, stack_t **head, unsigned int counter, FILE *file);
-void f_stack(stack_t *h);
+void free_stack(stack_t *h);
 void _pop(stack_t **h, unsigned int c);
 void _swap(stack_t **h, unsigned int n);
 void _add(stack_t **h, unsigned int c);
 void _nop(stack_t **h, unsigned int c);
 void _sub(stack_t **h, unsigned int n);
-void f_div(stack_t **head, unsigned int counter);
-void f_mul(stack_t **head, unsigned int counter);
-void f_mod(stack_t **head, unsigned int counter);
-void f_pchar(stack_t **head, unsigned int counter);
-void f_pstr(stack_t **head, unsigned int counter);
+void _div(stack_t **head, unsigned int counter);
+void _mul(stack_t **head, unsigned int counter);
+void _mod(stack_t **head, unsigned int counter);
+void _pchar(stack_t **head, unsigned int counter);
+void _pstr(stack_t **head, unsigned int counter);
 void _rot1(stack_t **h, unsigned int n);
 void _rot2(stack_t **h, __attribute__((unused)) unsigned int c);
+<<<<<<< HEAD
 void add_queue(stack_t **h, int n);
 void _queue(stack_t **h, unsigned int c);
+=======
+void add_queue(stack_t **head, int n);
+void _queue(stack_t **head, unsigned int counter);
+>>>>>>> c4ee7c4a1774208d31e2ebc087c863ea21e5e736
 void print_top(stack_t **h, unsigned int n);
 #endif

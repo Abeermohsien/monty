@@ -35,7 +35,7 @@ int _exe(char *content, stack_t **h, unsigned int c, FILE *f)
 			opst[j].f(h, c);
 			return (0);
 		}
-		i++;
+		j++;
 	}
 	if (oper && opst[j].opcode == NULL)
 	{

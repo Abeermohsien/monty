@@ -12,7 +12,7 @@ void _pint(stack_t **h, unsigned int c)
 		fprintf(stderr, "L%u: can't print, stack is empty\n", c);
 		fclose(st.file);
 		free(st.content);
-		f_stack(*h);
+		free_stack(*h);
 		exit(EXIT_FAILURE);
 	}
 	printf("%d\n", (*h)->n);
