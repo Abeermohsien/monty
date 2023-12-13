@@ -1,7 +1,7 @@
 #include "monty.h"
 /**
- * _nop - NOTHING TO DO
- * @h: head of the stack
+ * _nop - do nothing 
+ * @h: stack header 
  * @c: line number
  * Return: void
  */

@@ -5,7 +5,7 @@
  * @c: line number
  * Return: void
  */
-void _queue(stack_t *h, unsigned int c)
+void _queue(stack_t **h, unsigned int c)
 {
 	(void)h;
 	(void)c;
