@@ -39,6 +39,6 @@ void _push(stack_t **h, unsigned int n)
 	if (st.lifi == 0)
 		add_node(h, i);
 	else
-		addqueue(h, i);
+		add_queue(h, i);
 }
 
