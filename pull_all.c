@@ -11,9 +11,9 @@ void _pall(stack_t **h, unsigned int n)
 	(void)n;
 
 	node = *h;
-	if (h == NULL)
+	if (node == NULL)
 		return;
-	while (h)
+	while (node)
 	{
 		printf("%d\n", node->n);
 		node = node->next;
