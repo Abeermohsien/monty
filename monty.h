@@ -62,7 +62,7 @@ void _push(stack_t **h, unsigned int c);
 void _pall(stack_t **h, unsigned int n);
 void _pint(stack_t **h, unsigned int c);
 int execute(char *content, stack_t **head, unsigned int counter, FILE *file);
-void free_stack(stack_t *head);
+void f_stack(stack_t *h);
 void _pop(stack_t **h, unsigned int c);
 void _swap(stack_t **h, unsigned int n);
 void _add(stack_t **h, unsigned int c);
