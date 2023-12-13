@@ -11,10 +11,11 @@ int _exe(char *content, stack_t **h, unsigned int c, FILE *f)
 {
 	instruction_t opst[] = {
 		{"push", _push}, {"pall", _pint},
+		{"pint", _pint},
 		{"pop", _pop}, {"swap", _swap},
 		{"add", _add}, {"nop", _nop},
-		{"sub", _sub}, {"rot1", _rot1},
-		{"rot2", _rot2}, {"queue", _queue},
+		{"sub", _sub}, {"rotl", _rot1},
+		{"rotr", _rot2}, {"queue", _queue},
 		{"stack", print_top},
 		{NULL, NULL}
 	};
@@ -24,8 +25,7 @@ int _exe(char *content, stack_t **h, unsigned int c, FILE *f)
 	oper = strtok(content, " \n\t");
 	if (oper && oper[0] == '#')
 		return (0);
-	st.arg =
-		strtok(NULL, " \n\t");
+	st.arg = strtok(NULL, " \n\t");
 	while (opst[j].opcode && oper)
 	{
 		if (strcmp(oper, opst[j].opcode) == 0)

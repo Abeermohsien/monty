@@ -32,7 +32,7 @@ int main(int ac, char *av[])
 		c = NULL;
 		r = getline(&c, &s, file);
 		st.content = c;
-		c++;
+		cr++;
 		if (r > 0)
 		{
 			_exe(c, &sk, cr, file);
