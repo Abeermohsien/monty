@@ -15,4 +15,30 @@ void _push(stack_t **h, unsigned int n)
 			j++;
 		for (; st.arg[j] != '\0'; j++)
 		{
+			if (st.arg[j] > 57 || st.arg[j] < 48)
+				f = 1;
+		}
+		if (f == 1)
+		{
+			fprintf(stderr, "L%d: usage: push integer\n", n);
+			fclose(st.file);
+			free(st.content);
+			free_stack(*h);
+			exit(EXIT_FAILURE);
+		}
+	}
+	else
+	{
+		fprintf(stderr, "L%d: usage: push integer\n", n);
+		fclose(st.file);
+		free(st.content);
+		free_stack(*h);
+		exit(EXIT_FAILURE);
+	}
+	i = atoi(st.arg);
+	if (st.lifi == 0)
+		add_node(h, i);
+	else
+		addqueue(h, i);
+}
 
