@@ -2,10 +2,10 @@
 /**
  * _push - push node into the stack
  * @h: head pointer
- * @n: line number
+ * @c: line number
  * Return: void
  */
-void _push(stack_t **h, unsigned int n)
+void _push(stack_t **h, unsigned int c)
 {
 	int i, j = 0, f = 0;
 
@@ -20,7 +20,7 @@ void _push(stack_t **h, unsigned int n)
 		}
 		if (f == 1)
 		{
-			fprintf(stderr, "L%d: usage: push integer\n", n);
+			fprintf(stderr, "L%d: usage: push integer\n", c);
 			fclose(st.file);
 			free(st.content);
 			free_stack(*h);
@@ -29,7 +29,7 @@ void _push(stack_t **h, unsigned int n)
 	}
 	else
 	{
-		fprintf(stderr, "L%d: usage: push integer\n", n);
+		fprintf(stderr, "L%d: usage: push integer\n", c);
 		fclose(st.file);
 		free(st.content);
 		free_stack(*h);

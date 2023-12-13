@@ -22,13 +22,13 @@
  */
 typedef struct stack_s
 {
-        int n;
-        struct stack_s *prev;
-        struct stack_s *next;
+	int n;
+	struct stack_s *prev;
+	struct stack_s *next;
 } stack_t;
 
 /**
- * struct st - variables arguments, file and line
+ * struct st_s - variables arguments, file and line
  * @arg: arguments
  * @file: file
  * @content: line content
@@ -52,15 +52,15 @@ extern st_t st;
  */
 typedef struct instruction_s
 {
-        char *opcode;
-        void (*f)(stack_t **stack, unsigned int line_number);
+	char *opcode;
+	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 void add_node(stack_t **h, int n);
 void _pall(stack_t **h, unsigned int n);
 char *_realloc(char *ptr, unsigned int old_size, unsigned int new_size);
 ssize_t getstdin(char **lineptr, int file);
 char  *clean_line(char *content);
-void _push(stack_t **h, unsigned int n);
+void _push(stack_t **h, unsigned int c);
 void _pall(stack_t **h, unsigned int n);
 void _pint(stack_t **h, unsigned int c);
 int _exe(char *content, stack_t **h, unsigned int c, FILE *f);
@@ -69,7 +69,7 @@ void _pop(stack_t **h, unsigned int c);
 void _swap(stack_t **h, unsigned int n);
 void _add(stack_t **h, unsigned int c);
 void _nop(stack_t **h, unsigned int c);
-void _sub(stack_t **h, unsigned int n); 
+void _sub(stack_t **h, unsigned int n);
 void _rot1(stack_t **h, unsigned int n);
 void _rot2(stack_t **h, __attribute__((unused)) unsigned int c);
 void add_queue(stack_t **h, int n);
