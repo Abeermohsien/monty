@@ -9,25 +9,18 @@
 void _add(stack_t **h, unsigned int c)
 {
 	stack_t *hh;
-	int l = 0, ax;
+	int ax;
 
-	hh = *h;
-	while (hh)
+	if (h == NULL || *h == NULL || (*h)->next == NULL)
 	{
-		hh = hh->next;
-		l++;
-	}
-	if (l < 2)
-	{
-		fprintf(stderr, "L%d: can't add, stack too short\n", c);
-		fclose(st.file);
-		free(st.content);
-		free_stack(*h);
+		fprintf(stderr, "L%d: can't add, stack too short\n", c);	
+		free_stack();
 		exit(EXIT_FAILURE);
-	}
+	}	
 	hh = *h;
 	ax = hh->n + hh->next->n;
 	hh->next->n = ax;
 	*h = hh->next;
 	free(hh);
+	(*h)->prev = NULL;
 }

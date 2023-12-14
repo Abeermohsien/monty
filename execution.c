@@ -1,5 +1,60 @@
 #include "monty.h"
 /**
+ * open_file - to openthe file
+ * @fn: file name
+ * Return: int
+ */
+void open_file(char *fn)
+{
+	FILE *df = fopen(fn, "r");
+
+	if (fn == NULL || df == NULL)
+	{
+		fprintf(stderr, "Error: Can't open file %s\n", fn);
+		free_node();
+		exit(EXIT_FAILURE);
+	}
+	read_f(df);
+	fclose(df);
+}
+void read_f(FILE *df)
+{
+	int n, m = 0;
+	char *f= NULL;
+	size_t length = 0;
+
+	for (n = 1; getline(&f, &length, df) != -1; n++)
+	{
+		m = p_line(f, n, m);
+	}
+	free(f);
+}
+
+int p_line(char *buf, int n, int m)
+{
+	char *op, *val;
+	const char *del = "\n ";
+
+	if (buf == NULL)
+	{
+		fprintf(stderr, "Error: malloc failed\n");
+		free_nodes();
+		exit(EXIT_FAILURE);
+	}
+	op = strtok(buf, del);
+	if (op == NULL)
+		return (m);
+	val = strtok(NULL, del);
+
+	if (strcmp(op, "stack") == 0)
+		return (0);
+	if (strcmp(op, "queue") == o)
+		return (1);
+
+	_exe(op, val, n, m);
+	return (m);
+}
+/**
  * _exe - execution
  * @h: head
  * @c: line number
@@ -7,8 +62,10 @@
  * @content: line content
  * Return: int
  */
-int _exe(char *content, stack_t **stack, unsigned int counter, FILE *file)
+int _exe(char *op, char *val, int len, int m)
 {
+	int i, f;
+
 	instruction_t opst[] = {
 		{"push", _push},
 		{"pall", _pall},
@@ -29,29 +86,56 @@ int _exe(char *content, stack_t **stack, unsigned int counter, FILE *file)
 		{"pstr", _pstr},
 		{NULL, NULL}
 	};
-	unsigned int j = 0;
-	char *oper;
- 
-	oper = strtok(content, " \n\t");
-	if (oper && oper[0] == '#')
-		return (0);
-	st.arg = strtok(NULL, " \n\t");
-	while (opst[j].opcode && oper)
+	if (op[0] == '#')
+		retrun;
+	for (f = 1, i = 0; opst[i].op != NULL; i++)
 	{
-		if (strcmp(oper, opst[j].opcode) == 0)
-		{	
-			opst[j].f(stack, counter);
-			return (0);
+		if (strcmp(op, opst[i].op) == 0)
+		{
+			f_call(opst[i].f( op, val,len , m);
+			f = 0;
 		}
-		j++;
 	}
-	if (oper && opst[j].opcode == NULL)
+	if (f == 1)
 	{
-		fprintf(stderr, "L%d: unknown instruction %s\n", counter, oper);
-		fclose(file);
-		free(content);
-		free_stack(*stack);
-		exit(EXIT_FAILURE);
+	fprintf(stderr, "L%d: unknown instruction %s\n", len, op);
 	}
-	return (1);
 }
+/**
+ * f_call - call fun
+ * @f: fun
+ * @oper: opertion
+ * @val: value
+ * @len: length
+ * @fr: format
+ * Return: void
+ */
+
+void f_call(op_func f, char *oper, char *val, int len, int fr)
+{
+	stack_t *n, *head;
+	int f = 1;
+	int i;
+	for (strcmp(oper, "push") == 0)
+	{
+		if (val != NULL && val[0] == '-')
+		{
+			val++;
+			f = -1;
+		}
+		if (val == NULL)
+			fprintf(stderr, "L%d: usage: push integer\n", len);
+		for (i = 0; val[i] != '\0'; i++)
+		{
+			if (isdigit(val[i] == 0)
+					fprintf(stderr, "L%d: usage: push integer\n", len);
+					}
+					node = add_node(atoi(val) * f);
+					if (fr == 1)
+					func(&n, ln);
+					if (format == 0)
+					add_queue(&n, len);
+					}
+					else
+					func(&head, len);
+					}

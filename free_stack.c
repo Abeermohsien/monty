@@ -6,13 +6,15 @@
 
 void free_stack(stack_t *h)
 {
-	stack_t *ax;
+	stack_t *t;
 
-	ax = h;
+	if (h == NULL)
+		return;
+
 	while (h)
 	{
-		ax = h->next;
-		free(h);
-		h = ax;
+		t = h;
+		h = h->next;
+		free(t);
 	}
 }

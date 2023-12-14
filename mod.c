@@ -9,33 +9,24 @@
 void _mod(stack_t **h, unsigned int c)
 {
 	stack_t *i;
-	int length = 0, ax;
+	int ax;
+	i = *h;
 
-	i = *h;
-	while (i)
+	if (h == NULL || *h == NULL || (*h)->next == NULL)
 	{
-		i = i->next;
-		length++;
+	fprintf(stderr, "L%d: can't mod, stack too short\n", c);
+	free_nodes();
+	exit(EXIT_FAILURE);
 	}
-	if (length < 2)
-	{
-		fprintf(stderr, "L%d: can't mod, stack too short\n", c);
-		fclose(st.file);
-		free(st.content);
-		free_stack(*h);
-		exit(EXIT_FAILURE);
-	}
-	i = *h;
 	if (i->n == 0)
 	{
 		fprintf(stderr, "L%d: division by zero\n", c);
-		fclose(st.file);
-		free(st.content);
-		free_stack(*h);
+		free_nodes();
 		exit(EXIT_FAILURE);
 	}
 	ax = i->next->n % i->n;
 	i->next->n = ax;
 	*h = i->next;
 	free(i);
+	(*h)->prev = NULL;
 }
