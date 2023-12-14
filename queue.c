@@ -26,7 +26,7 @@ void add_queue(stack_t **h, int n)
 	new_node = malloc(sizeof(stack_t));
 	if (new_node == NULL)
 	{
-		printf("Error\n");	
+		printf("Error\n");
 	}
 	new_node->n = n;
 	new_node->next = NULL;
