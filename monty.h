@@ -77,7 +77,7 @@ void _swap(stack_t **h, unsigned int n);
 void _sub(stack_t **h, unsigned int n);
 void print_top(stack_t **h, unsigned int n);
 void _queue(stack_t **h, unsigned int c);
-void print_str(stack_t **stack, __attribute__((unused))unsigned int ln);
+void p_str(stack_t **stack, __attribute__((unused))unsigned int ln);
 void _pop(stack_t **h, unsigned int c);
 void _pchar(stack_t **stack, unsigned int ln);
 void _nop(stack_t **h, unsigned int c);
