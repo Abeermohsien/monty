@@ -45,7 +45,7 @@ void _pall(stack_t **h, unsigned int c);
 void _push(stack_t **h, __attribute__((unused)) unsigned int c);
 void o_file(char *fn);
 void read_f(FILE *df);
-int _exe(char *op, char *val, int len, int m);
+void _exe(char *op, char *val, int len, int m);
 int p_line(char *buf, int n, int m);
 void f_call(op_func fun, char *oper, char *val, int len, int fr);
 void rot1(stack_t **h, __attribute__((unused))unsigned int n);

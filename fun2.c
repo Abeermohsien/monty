@@ -8,35 +8,34 @@
  * @m: line content
  * Return: int
  */
-int _exe(char *op, char *val, int len, int m)
+void _exe(char *op, char *val, int len, int m)
 {
 	int i, f;
 
 	instruction_t opst[] = {
 		{"push", _push},
 		{"pall", _pall},
-		{"pint", _pint},
+		{"pint", _print},
 		{"pop", _pop},
 		{"swap", _swap},
 		{"add", _add},
 		{"nop", _nop},
 		{"sub", _sub},
-		{"rotl", _rot1},
-		{"rotr", _rot2},
-		{"queue", _queue},
-		{"stack", print_top},
+		{"rotl", rot1},
+		{"rotr", rot2},
+		{"queue", add_queue},	
 		{"div", _div},
 		{"mul", _mul},
 		{"mod", _mod},
 		{"pchar", _pchar},
-		{"pstr", _pstr},
+		{"pstr", p_str},
 		{NULL, NULL}
 	};
 	if (op[0] == '#')
-		retrun;
-	for (f = 1, i = 0; opst[i].op != NULL; i++)
+		return;
+	for (f = 1, i = 0; opst[i].opcode != NULL; i++)
 	{
-		if (strcmp(op, opst[i].op) == 0)
+		if (strcmp(op, opst[i].opcode) == 0)
 		{
 			f_call(opst[i].f, op, val, len, m);
 			f = 0;
@@ -54,7 +53,7 @@ int _exe(char *op, char *val, int len, int m)
  * @fun: fun
  * @oper: opertion
  * @val: value
- * @len: length
+ * @len: line number 
  * @fr: format
  * Return: void
  */
@@ -62,9 +61,10 @@ int _exe(char *op, char *val, int len, int m)
 void f_call(op_func fun, char *oper, char *val, int len, int fr)
 {
 	stack_t *n,
-	int f = 1;
+	int f;
 	int i;
 
+	f = 1;
 	if (strcmp(oper, "push") == 0)
 	{
 		if (val != NULL && val[0] == '-')
@@ -74,23 +74,22 @@ void f_call(op_func fun, char *oper, char *val, int len, int fr)
 		}
 		if (val == NULL)
 		{
-			fprintf(stderr, "L%d: usage: push integer\n", len);
-			free_stack();
+			fprintf(stderr, "L%d: usage: push integer\n", len);			free_stack();
 			exit(EXIT_FAILURE);
 		}
 		for (i = 0; val[i] != '\0'; i++)
 		{
-			if (isdigit(val[i] == 0)
+			if (isdigit(val[i]) == 0)
 					{
 				fprintf(stderr, "L%d: usage: push integer\n", len);
 				free_stack();
 				exit(EXIT_FAILURE);
 				}
 		}
-				node = add_node(atoi(val) * f);
+				n = add_node(atoi(val) * f);
 				if (fr == 0)
 				fun(&n, len);
-					if (format == 0)
+					if (fr == 1)
 					add_queue(&n, len);
 	}
 					else
