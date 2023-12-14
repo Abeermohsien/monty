@@ -93,6 +93,7 @@ void f_call(op_func fun, char *oper, char *val, int len, int fr)
 				exit(EXIT_FAILURE);
 			}
 		}
+<<<<<<< HEAD
 		n = add_node(atoi(val) * f);
 		if (fr == 0)
 			fun(&n, len);
@@ -101,4 +102,20 @@ void f_call(op_func fun, char *oper, char *val, int len, int fr)
 	}
 	else
 		fun(&head, len);
+=======
+				n = add_node(atoi(val) * f);
+				if (fr == 0)
+				fun(&n, len);
+					if (fr == 1)
+					add_queue(&n, len);
+<<<<<<< HEAD
+		}
+					else
+					fun(&head, len);
+=======
+	}
+		else
+			fun(&head, len);
+>>>>>>> 8c3b20733405d7330ad0f912de2f6a4a4c0833be
+>>>>>>> 33a78b53fed269b1278aea955ccc100d77094889
 }
