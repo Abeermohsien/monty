@@ -1,12 +1,13 @@
 #ifndef MONTY_H
 #define MONTY_H
+
 #define _GNU_SOURCE
 #include <stdio.h>
-#include <stdlib.h>
-#include <stdarg.h>
 #include <unistd.h>
 #include <string.h>
+#include <stdlib.h>
 #include <ctype.h>
+#include <stdarg.h>
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -41,28 +42,36 @@ typedef struct instruction_s
 extern stack_t *head;
 typedef void (*op_func)(stack_t **, unsigned int);
 
-void _pint(stack_t **h, unsigned int c);
-void _pall(stack_t **h, unsigned int c);
-void _push(stack_t **h, __attribute__((unused)) unsigned int c);
 void o_file(char *fn);
-void read_f(FILE *df);
-void _exe(char *op, char *val, int len, int m);
 int p_line(char *buf, int n, int m);
-void f_call(op_func fun, char *oper, char *val, int len, int fr);
-void rot1(stack_t **h, __attribute__((unused))unsigned int n);
-void rot2(stack_t **h, __attribute__((unused))unsigned int c);
-void _mul(stack_t **h, unsigned int c);
-void _mod(stack_t **h, unsigned int c);
-void free_stack(void);
+void read_f(FILE *);
+int len_chars(FILE *);
+void _exe(char *, char *, int, int);
+
 stack_t *add_node(int n);
-void add_queue(stack_t **h, __attribute__((unused))unsigned int n);
-void _swap(stack_t **h, unsigned int n);
-void _sub(stack_t **h, unsigned int n);
-void p_str(stack_t **tack, __attribute__((unused))unsigned int n);
-void _pop(stack_t **h, unsigned int c);
-void _pchar(stack_t **tack, unsigned int n);
-void _nop(stack_t **h, unsigned int c);
-int main(int argc, char *argv[]);
-void _div(stack_t **h, unsigned int c);
-void _add(stack_t **h, unsigned int c);
+void free_stack(void);
+void _pall(stack_t **, unsigned int);
+void _push(stack_t **, unsigned int);
+void add_queue(stack_t **, unsigned int);
+
+void f_call(op_func, char *, char *, int, int);
+
+void _pint(stack_t **, unsigned int);
+void _pop(stack_t **, unsigned int);
+void _nop(stack_t **, unsigned int);
+void _swap(stack_t **, unsigned int);
+
+void _add(stack_t **, unsigned int);
+void _sub(stack_t **, unsigned int);
+void _div(stack_t **, unsigned int);
+void _mul(stack_t **, unsigned int);
+void _mod(stack_t **, unsigned int);
+
+void _pchar(stack_t **, unsigned int);
+void p_str(stack_t **, unsigned int);
+void rot1(stack_t **, unsigned int);
+
+void err(int error, ...);
+void rot2(stack_t **, unsigned int);
+
 #endif

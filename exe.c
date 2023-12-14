@@ -31,9 +31,7 @@ void read_f(FILE *df)
 	size_t length = 0;
 
 	for (n = 1; getline(&f, &length, df) != -1; n++)
-	{
-	       m = p_line(f, n, m);
-	}
+		m = p_line(f, n, m);
 	free(f);
 }
 
@@ -64,7 +62,7 @@ int p_line(char *buf, int n, int m)
 	if (strcmp(op, "queue") == 0)
 		return (1);
 
-	find_func(op, val, n, m);
+	_exe(op, val, n, m);
 	return (m);
 }
 
@@ -79,7 +77,7 @@ int p_line(char *buf, int n, int m)
 void _exe(char *op, char *val, int len, int m)
 {
 	int i;
-	int flag;
+	int f;
 
 	instruction_t func_list[] = {
 		{"push", _push},
@@ -107,7 +105,7 @@ void _exe(char *op, char *val, int len, int m)
 	{
 		if (strcmp(op, func_list[i].opcode) == 0)
 		{
-			call_fun(func_list[i].f, op, val, len, m);
+			f_call(func_list[i].f, op, val, len, m);
 			f = 0;
 		}
 	}
@@ -124,7 +122,7 @@ void _exe(char *op, char *val, int len, int m)
  * @len: line numeber
  * @m: Format
  */
-void call_fun(op_func fun, char *op, char *val, int len, int m)
+void f_call(op_func fun, char *op, char *val, int len, int m)
 {
 	stack_t *node;
 	int f;
@@ -147,10 +145,10 @@ void call_fun(op_func fun, char *op, char *val, int len, int m)
 		}
 		node = add_node(atoi(val) * f);
 		if (m == 0)
-			func(&node, len);
+			fun(&node, len);
 		if (m == 1)
-			add_to_queue(&node, len);
+			add_queue(&node, len);
 	}
 	else
-		func(&head, len);
+		fun(&head, len);
 }
