@@ -10,13 +10,14 @@
  */
 void _exe(char *op, char *val, int len, int m)
 {
-	int i, f;
+	int i;
+	
+	int f;
 
 	instruction_t opst[] = {
 		{"push", _push},
 		{"pall", _pall},
 		{"print", _print},
-		{"pint", _print},
 		{"pop", _pop},
 		{"swap", _swap},
 		{"add", _add},
