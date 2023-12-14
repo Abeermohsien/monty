@@ -10,6 +10,7 @@ void _mod(stack_t **h, unsigned int c)
 {
 	stack_t *i;
 	int ax;
+
 	i = *h;
 
 	if (h == NULL || *h == NULL || (*h)->next == NULL)

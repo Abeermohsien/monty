@@ -11,7 +11,7 @@ void _div(stack_t **h, unsigned int c)
 	int ax;
 
 	i = *h;
-	if (h == NULL || *h == NULL || (*h)->next == NULL) 
+	if (h == NULL || *h == NULL || (*h)->next == NULL)
 	{
 		fprintf(stderr, "L%d: can't div, stack too short\n", c);
 		free_stack();
@@ -20,10 +20,10 @@ void _div(stack_t **h, unsigned int c)
 	i = *h;
 	if (i->n == 0)
 	{
-		fprintf(stderr, "L%d: division by zero\n", c);	
+		fprintf(stderr, "L%d: division by zero\n", c);
 		free_stack(*h);
 		exit(EXIT_FAILURE);
-	}	
+	}
 	ax = i->next->n / i->n;
 	i->next->n = ax;
 	*h = i->next;

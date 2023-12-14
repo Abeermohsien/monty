@@ -103,7 +103,7 @@ int _exe(char *op, char *val, int len, int m)
 	{
 		if (strcmp(op, opst[i].op) == 0)
 		{
-			f_call(opst[i].f, op, val,len , m);
+			f_call(opst[i].f, op, val, len, m);
 			f = 0;
 		}
 	}
@@ -129,7 +129,7 @@ void f_call(op_func f, char *oper, char *val, int len, int fr)
 	stack_t *n,
 	int f = 1;
 	int i;
-	
+
 	for (strcmp(oper, "push") == 0)
 	{
 		if (val != NULL && val[0] == '-')

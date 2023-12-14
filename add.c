@@ -13,10 +13,10 @@ void _add(stack_t **h, unsigned int c)
 
 	if (h == NULL || *h == NULL || (*h)->next == NULL)
 	{
-		fprintf(stderr, "L%d: can't add, stack too short\n", c);	
+		fprintf(stderr, "L%d: can't add, stack too short\n", c);
 		free_stack();
 		exit(EXIT_FAILURE);
-	}	
+	}
 	hh = *h;
 	ax = hh->n + hh->next->n;
 	hh->next->n = ax;

@@ -2,13 +2,15 @@
 /**
  * _mul - multiplies top two elements of the stack.
  * @h: head of the stack
- * @counter: line number
+ * @c: line number
  * Return: void
 */
 void _mul(stack_t **h, unsigned int c)
 {
 	int ax;
+
 	stack_t *i;
+
 	if (h == NULL || *h == NULL || (*h)->next == NULL)
 	{
 		fprintf(stderr, "L%d: can't mul, stack too short\n", c);
