@@ -2,8 +2,8 @@
 /**
  * _pchar - print char at top of stack,
  * followed by a new line
- * @h: head of stack
- * @c: line number
+ * @tack: head of stack
+ * @n: line number
  * Return: void
 */
 void _pchar(stack_t **tack, unsigned int n)
@@ -17,7 +17,7 @@ void _pchar(stack_t **tack, unsigned int n)
 	exit(EXIT_FAILURE);
 	}
 	sc = (*tack)->n;
-	if (sc < 0 || > 127)
+	if (sc < 0 || sc > 127)
 	{
 	fprintf(stderr, "L%d: can't pchar, value out of range\n", n);
 	free_stack();
