@@ -15,13 +15,13 @@ void _mod(stack_t **h, unsigned int c)
 	if (h == NULL || *h == NULL || (*h)->next == NULL)
 	{
 	fprintf(stderr, "L%d: can't mod, stack too short\n", c);
-	free_nodes();
+	free_stack();
 	exit(EXIT_FAILURE);
 	}
 	if (i->n == 0)
 	{
 		fprintf(stderr, "L%d: division by zero\n", c);
-		free_nodes();
+		free_stack();
 		exit(EXIT_FAILURE);
 	}
 	ax = i->next->n % i->n;

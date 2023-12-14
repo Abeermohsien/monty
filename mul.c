@@ -12,7 +12,7 @@ void _mul(stack_t **h, unsigned int c)
 	if (h == NULL || *h == NULL || (*h)->next == NULL)
 	{
 		fprintf(stderr, "L%d: can't mul, stack too short\n", c);
-		free_nodes();
+		free_stack();
 		exit(EIXT_FAILURE);
 	}
 	i = *head;

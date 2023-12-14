@@ -14,7 +14,7 @@ void _div(stack_t **h, unsigned int c)
 	if (h == NULL || *h == NULL || (*h)->next == NULL) 
 	{
 		fprintf(stderr, "L%d: can't div, stack too short\n", c);
-		free_stack(*h);
+		free_stack();
 		exit(EXIT_FAILURE);
 	}
 	i = *h;

@@ -56,7 +56,6 @@ typedef struct instruction_s
 extern stack_t *head;
 typedef void (*op_func)(stack_t **
 
-/*file operation*/
 void _print(stack_t **h, unsigned int c);
 void _pall(stack_t **h, unsigned int c);
 void push(stack_t **h, __attribute__((unused)) unsigned int c);

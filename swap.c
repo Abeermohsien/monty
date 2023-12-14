@@ -8,7 +8,6 @@
 void _swap(stack_t **h, unsigned int n)
 {
 	stack_t *node;
-	int i;
 
 	if (h == NULL || *h == NULL || (*h)->next == NULL)
 	{
@@ -16,8 +15,12 @@ void _swap(stack_t **h, unsigned int n)
 		free_stack();
 		exit(EXIT_FAILURE);
 	}
-	node = *h;
-	i = node->n;
-	node->n = node->next->n;
-	node->next->n = i;
+	node = (*h)->next;
+	(*h)->next = node->next;
+	if (node->next)
+		node->next->prev = *h;
+	node->next = *h;
+	(*h)->prev = node;
+	node->prev = NULL;
+	*h = node;
 }

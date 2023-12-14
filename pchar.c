@@ -6,15 +6,22 @@
  * @c: line number
  * Return: void
 */
-void _pchar(stack_t **stack, unsigned int ln)
+void _pchar(stack_t **tack, unsigned int n)
 {
-	int ascii;
+	int sc;
 
-	if (stack == NULL || *stack == NULL)
-		string_err(11, ln);
-
-	ascii = (*stack)->n;
-	if (ascii < 0 || > 127)
-		string_err(10, ln);
-	printf("%c\n", ascii);
+	if (tack == NULL || *tack == NULL)
+	{
+	fprintf(stderr, "L%d: can't pchar, stack empty\n", n);
+	free_stack();
+	exit(EXIT_FAILURE);
+	}
+	sc = (*tack)->n;
+	if (sc < 0 || > 127)
+	{
+	fprintf(stderr, "L%d: can't pchar, value out of range\n", n);
+	free_stack();
+	exit(EXIT_FAILURE);
+	}
+	printf("%c\n", sc);
 }
