@@ -26,7 +26,6 @@ void _exe(char *op, char *val, int len, int m)
 		{"rotl", rot1},
 		{"rot2", rot2},
 		{"queue", add_queue},
-		{"print_top", print_top},
 		{"rotr", rot2},
 		{"queue", add_queue},	
 		{"div", _div},
