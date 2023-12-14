@@ -21,11 +21,10 @@
  */
 typedef struct stack_s
 {
-	int n;
-	struct stack_s *prev;
-	struct stack_s *next;
+        int n;
+        struct stack_s *prev;
+        struct stack_s *next;
 } stack_t;
-
 /**
  * struct st_s - variables arguments, file and line
  * @arg: arguments
