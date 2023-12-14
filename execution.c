@@ -49,7 +49,7 @@ int p_line(char *buf, int n, int m)
 	if (buf == NULL)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
-		free_nodes();
+		free_stack();
 		exit(EXIT_FAILURE};
 	}
 	op = strtok(buf, del);
@@ -59,7 +59,7 @@ int p_line(char *buf, int n, int m)
 
 	if (strcmp(op, "stack") == 0)
 		return (0);
-	if (strcmp(op, "queue") == o)
+	if (strcmp(op, "queue") == 0)
 		return (1);
 
 	_exe(op, val, n, m);
@@ -110,6 +110,8 @@ int _exe(char *op, char *val, int len, int m)
 	if (f == 1)
 	{
 	fprintf(stderr, "L%d: unknown instruction %s\n", len, op);
+	free_stack();
+	exit(EXIT_FAILURE);
 	}
 }
 /**
