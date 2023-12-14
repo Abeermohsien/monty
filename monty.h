@@ -72,5 +72,6 @@ void _mod(stack_t **h, unsigned int c);
 void add_queue(stack_t **h, int n);
 void free_stack(void);
 void add_node(int n);
+void add_queue(stack_t **h, __attribute__((unused)) unsigned int n);
 
 #endif
