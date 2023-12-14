@@ -23,7 +23,7 @@ void _exe(char *op, char *val, int len, int m)
 		{"sub", _sub},
 		{"rotl", rot1},
 		{"rotr", rot2},
-		{"queue", add_queue},	
+		{"queue", add_queue},
 		{"div", _div},
 		{"mul", _mul},
 		{"mod", _mod},
@@ -31,8 +31,10 @@ void _exe(char *op, char *val, int len, int m)
 		{"pstr", p_str},
 		{NULL, NULL}
 	};
+
 	if (op[0] == '#')
 		return;
+
 	for (f = 1, i = 0; opst[i].opcode != NULL; i++)
 	{
 		if (strcmp(op, opst[i].opcode) == 0)
@@ -48,19 +50,20 @@ void _exe(char *op, char *val, int len, int m)
 	exit(EXIT_FAILURE);
 	}
 }
+
 /**
  * f_call - call fun
  * @fun: fun
  * @oper: opertion
  * @val: value
- * @len: line number 
+ * @len: line number
  * @fr: format
  * Return: void
  */
 
 void f_call(op_func fun, char *oper, char *val, int len, int fr)
 {
-	stack_t *n,
+	stack_t *n; 
 	int f;
 	int i;
 
@@ -74,7 +77,8 @@ void f_call(op_func fun, char *oper, char *val, int len, int fr)
 		}
 		if (val == NULL)
 		{
-			fprintf(stderr, "L%d: usage: push integer\n", len);			free_stack();
+			fprintf(stderr, "L%d: usage: push integer\n", len);
+			free_stack();
 			exit(EXIT_FAILURE);
 		}
 		for (i = 0; val[i] != '\0'; i++)
