@@ -13,7 +13,7 @@ void _swap(stack_t **h, unsigned int n)
 	if (h == NULL || *h == NULL || (*h)->next == NULL)
 	{
 		fprintf(stderr, "L%d: can't swap, stack too short\n", n);
-		free_nodes();
+		free_stack();
 		exit(EXIT_FAILURE);
 	}
 	node = *h;

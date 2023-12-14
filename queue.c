@@ -1,16 +1,4 @@
 #include "monty.h"
-/**
- * _queue - print top
- * @h: head of the stack
- * @c: line number
- * Return: void
- */
-void _queue(stack_t **h, unsigned int c)
-{
-	(void)h;
-	(void)c;
-	st.lifi = 1;
-}
 
 /**
  * add_queue - add node to the queue tail
@@ -18,21 +6,21 @@ void _queue(stack_t **h, unsigned int c)
  * @n: new value
  * Return: void
  */
-void add_queue(stack_t **h, int n)
+void add_queue(stack_t **h, __attribute__((unused))unsigned int n)
 {
 	stack_t *ax;
 
-	if (ax == NULL || *ax == NULL)
+	if (h == NULL || *h == NULL)
 		exit(EXIT_FAILURE);
 	if (head == NULL)
 	{
-		head = *ax;
+		head = *h;
 		return;
 	}
 	ax = head;
 	while (ax->next != NULL)
 		ax = ax->next;
-	
-	ax->next = new_node;
-	new_node->prev = ax;	
+
+	ax->next = *h;
+	h->prev = ax;
 }
