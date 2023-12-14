@@ -100,13 +100,10 @@ void f_call(op_func fun, char *oper, char *val, int len, int fr)
 				fun(&n, len);
 					if (fr == 1)
 					add_queue(&n, len);
-<<<<<<< HEAD
 		}
 					else
-					fun(&head, len);
-=======
+					fun(&head, len)
 	}
 		else
 			fun(&head, len);
->>>>>>> 8c3b20733405d7330ad0f912de2f6a4a4c0833be
 }
