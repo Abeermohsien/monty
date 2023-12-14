@@ -22,6 +22,8 @@ int _exe(char *content, stack_t **h, unsigned int c, FILE *f)
 	unsigned int j = 0;
 	char *oper;
 
+	if (content == NULL)
+		fprintf(stderr, "Error: malloc failed\n");
 	oper = strtok(content, " \n\t");
 	if (oper && oper[0] == '#')
 		return (0);

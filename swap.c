@@ -10,6 +10,8 @@ void _swap(stack_t **h, unsigned int n)
 	stack_t *node;
 	int i, length = 0;
 
+	if (h == NULL || *h == NULL || (*h)->next == NULL)
+		fprintf(stderr, "L%d: can't swap, stack too short\n", n);
 	node = *h;
 	while (node)
 	{

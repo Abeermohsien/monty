@@ -7,21 +7,17 @@
  */
 void _rot1(stack_t **h, __attribute__((unused))unsigned int n)
 {
-	stack_t *t, *node;
+	stack_t *t;
 
-	t = *h;
-	if (*h == NULL || (*h)->next == NULL)
-	{
+	if (h == NULL || *h == NULL || (*h)->next == NULL)
 		return;
-	}
-	node = (*h)->next;
-	node->prev = NULL;
+	t = *h;
 	while (t->next != NULL)
-	{
 		t = t->next;
-	}
+
 	t->next = *h;
-	(*h)->next = NULL;
 	(*h)->prev = t;
-	(*h) = node;
+	*h = (*h)->next;
+	(*h)->prev->next = NULL;
+	(*h)->prev = NULL;
 }

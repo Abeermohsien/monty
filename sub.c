@@ -10,6 +10,10 @@ void _sub(stack_t **h, unsigned int n)
 	int node, i;
 	stack_t *tmp;
 
+	if (h == NULL || *h == NULL || (*h)->next == NULL)
+	{
+		return;
+	}
 	tmp = *h;
 	for (node = 0; tmp != NULL; node++)
 		tmp = tmp->next;
@@ -26,4 +30,5 @@ void _sub(stack_t **h, unsigned int n)
 	tmp->next->n = i;
 	*h = tmp->next;
 	free(tmp);
+	(*h)->prev = NULL;
 }
