@@ -72,5 +72,17 @@ void add_queue(stack_t **h, int n);
 void free_stack(void);
 void add_node(int n);
 void add_queue(stack_t **h, __attribute__((unused)) unsigned int n);
-
+void _swap(stack_t **h, unsigned int n);
+void _sub(stack_t **h, unsigned int n);
+void print_top(stack_t **h, unsigned int n);
+void _queue(stack_t **h, unsigned int c);
+void p_str(stack_t **stack, __attribute__((unused))unsigned int ln);
+void _pop(stack_t **h, unsigned int c);
+void _pchar(stack_t **stack, unsigned int ln);
+void _nop(stack_t **h, unsigned int c);
+int main(int argc, char *argv[]);
+void free_stack(stack_t *h);
+void _div(stack_t **h, unsigned int c);
+void add_node(stack_t **h, int n);
+void _add(stack_t **h, unsigned int c);
 #endif

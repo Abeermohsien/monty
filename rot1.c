@@ -1,11 +1,11 @@
 #include "monty.h"
 /**
- * _rot1 - rotayes the stack
+ * rot1 - rotayes the stack
  * @h: head
  * @n: line number
  * Return: void
  */
-void _rot1(stack_t **h, __attribute__((unused))unsigned int n)
+void rot1(stack_t **h, __attribute__((unused))unsigned int n)
 {
 	stack_t *t;
 

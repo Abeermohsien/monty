@@ -141,13 +141,13 @@ void f_call(op_func f, char *oper, char *val, int len, int fr)
 		{
 			if (isdigit(val[i] == 0)
 					fprintf(stderr, "L%d: usage: push integer\n", len);
-					}
+		}
 					node = add_node(atoi(val) * f);
 					if (fr == 1)
 					func(&n, ln);
 					if (format == 0)
 					add_queue(&n, len);
-					}
+	}
 					else
 					func(&head, len);
-					}
+}

@@ -1,11 +1,11 @@
 #include "monty.h"
 /**
- * _rot2 - rotates stsck to button
+ * rot2 - rotates stsck to button
  * @h: header pointer
  * @c: line number
  * Return: void
  */
-void _rot2(stack_t **h, __attribute__((unused))unsigned int c)
+void rot2(stack_t **h, __attribute__((unused))unsigned int c)
 {
 	stack_t *cpy;
 
