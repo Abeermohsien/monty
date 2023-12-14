@@ -13,11 +13,7 @@ void _add(stack_t **h, unsigned int c)
 
 	if (h == NULL || *h == NULL || (*h)->next == NULL)
 	{
-		fprintf(stderr, "L%d: can't add, stack too short", c);
-		fclose(st.file);
-		free(st.content);
-		free_stack(*h);
-		exit(EXIT_FAILURE);
+		return;
 	}
 	hh = *h;
 	while (hh)
