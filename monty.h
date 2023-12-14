@@ -54,8 +54,7 @@ typedef struct instruction_s
 } instruction_t;
 void add_node(stack_t **h, int n);
 void _pall(stack_t **h, unsigned int n);
-void _push(stack_t **h, unsigned int c);
-void _pall(stack_t **h, unsigned int c);
+void _push(stack_t **h, unsigned int c); 
 void _pint(stack_t **h, unsigned int c);
 int _exe(char *content, stack_t **stack, unsigned int counter, FILE *file)
 void free_stack(stack_t *h);
