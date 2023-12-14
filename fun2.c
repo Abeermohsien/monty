@@ -11,7 +11,6 @@
 void _exe(char *op, char *val, int len, int m)
 {
 	int i;
-	
 	int f;
 
 	instruction_t opst[] = {
@@ -49,9 +48,9 @@ void _exe(char *op, char *val, int len, int m)
 	}
 	if (f == 1)
 	{
-	fprintf(stderr, "L%d: unknown instruction %s\n", len, op);
-	free_stack();
-	exit(EXIT_FAILURE);
+		fprintf(stderr, "L%d: unknown instruction %s\n", len, op);
+		free_stack();
+		exit(EXIT_FAILURE);
 	}
 }
 
@@ -67,7 +66,7 @@ void _exe(char *op, char *val, int len, int m)
 
 void f_call(op_func fun, char *oper, char *val, int len, int fr)
 {
-	stack_t *n; 
+	stack_t *n;
 	int f;
 	int i;
 
@@ -102,6 +101,6 @@ void f_call(op_func fun, char *oper, char *val, int len, int fr)
 					if (fr == 1)
 					add_queue(&n, len);
 	}
-					else
-					fun(&head, len);
+		else
+			fun(&head, len);
 }
