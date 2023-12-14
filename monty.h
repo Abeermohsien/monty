@@ -52,22 +52,26 @@ typedef struct instruction_s
 	char *opcode;
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
-void add_node(stack_t **h, int n);
-void _pall(stack_t **h, unsigned int n);
-void _push(stack_t **h, unsigned int c); 
-void _pint(stack_t **h, unsigned int c);
-int _exe(char *content, stack_t **stack, unsigned int counter, FILE *file)
-void free_stack(stack_t *h);
-void _pop(stack_t **h, unsigned int c);
-void _swap(stack_t **h, unsigned int n);
-void _add(stack_t **h, unsigned int c);
-void _nop(stack_t **h, unsigned int c);
-void _sub(stack_t **h, unsigned int n);
-void _rot1(stack_t **h, unsigned int n);
-void _rot2(stack_t **h, __attribute__((unused)) unsigned int c);
+
+extern stack_t *head;
+typedef void (*op_func)(stack_t **
+
+/*file operation*/
+void _print(stack_t **h, unsigned int c);
+void _pall(stack_t **h, unsigned int c);
+void push(stack_t **h, __attribute__((unused)) unsigned int c);
+void open_file(char *fn);
+void read_f(FILE *df);
+int _exe(char *op, char *val, int len, int m);
+int p_line(char *buf, int n, int m);
+void f_call(op_func f, char *oper, char *val, int len, int fr);
+void rot1(stack_t **h, __attribute__((unused)) unsigned int n);
+void rot2(stack_t **h, __attribute__((unused)) unsigned int c);
+void _mul(stack_t **h, unsigned int c);
+void _mod(stack_t **h, unsigned int c);
 void add_queue(stack_t **h, int n);
-void _queue(stack_t **h, unsigned int c);
-void print_top(stack_t **h, unsigned int n);
-void _div(stack_t **h, unsigned int c);
-void _mod(stack_t **h, unsigned int c)
+void free_stack(void);
+void add_node(int n);
+void add_queue(stack_t **h, __attribute__((unused)) unsigned int n);
+
 #endif
