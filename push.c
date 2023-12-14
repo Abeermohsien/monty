@@ -1,12 +1,12 @@
 #include "monty.h"
 
 /**
- * _push - push node into the stack
+ * push - push node into the stack
  * @h: head pointer
  * @c: line number
  * Return: void
  */
-void _push(stack_t **h, __attribute__((unused))unsigned int c)
+void push(stack_t **h, __attribute__((unused))unsigned int c)
 {
 	stack_t *ptr;
 
