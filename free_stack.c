@@ -1,4 +1,5 @@
 #include "monty.h"
+
 /**
  * free_stack - double linked list free
  * Retuen: void

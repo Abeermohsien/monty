@@ -115,7 +115,7 @@ void _exe(char *op, char *val, int len, int m)
 
 
 /**
- * call_fun - Calls the required function.
+ * f_call - Calls the required function.
  * @fun: function
  * @op: oper
  * @val: numer value.
