@@ -15,25 +15,19 @@ void _exe(char *op, char *val, int len, int m)
 	instruction_t opst[] = {
 		{"push", _push},
 		{"pall", _pall},
-<<<<<<< HEAD
 		{"print", _print},
-=======
 		{"pint", _print},
->>>>>>> 699014b8eb69bc31feaec61188b34984c204a18b
 		{"pop", _pop},
 		{"swap", _swap},
 		{"add", _add},
 		{"nop", _nop},
 		{"sub", _sub},
 		{"rotl", rot1},
-<<<<<<< HEAD
 		{"rot2", rot2},
 		{"queue", add_queue},
 		{"print_top", print_top},
-=======
 		{"rotr", rot2},
 		{"queue", add_queue},	
->>>>>>> 699014b8eb69bc31feaec61188b34984c204a18b
 		{"div", _div},
 		{"mul", _mul},
 		{"mod", _mod},
@@ -84,18 +78,16 @@ void f_call(op_func fun, char *oper, char *val, int len, int fr)
 		}
 		if (val == NULL)
 		{
-			fprintf(stderr, "L%d: usage: push integer\n", len);			free_stack();
+			fprintf(stderr, "L%d: usage: push integer\n", len);
+			free_stack();
 			exit(EXIT_FAILURE);
 		}
 		for (i = 0; val[i] != '\0'; i++)
 		{
-<<<<<<< HEAD
 			if (isdigit(val[i] == 0))
 				{
-=======
 			if (isdigit(val[i]) == 0)
 					{
->>>>>>> 699014b8eb69bc31feaec61188b34984c204a18b
 				fprintf(stderr, "L%d: usage: push integer\n", len);
 				free_stack();
 				exit(EXIT_FAILURE);
