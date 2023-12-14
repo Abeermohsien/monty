@@ -29,6 +29,5 @@ void _add(stack_t **h, unsigned int c)
 	ax = hh->n + hh->next->n;
 	hh->next->n = ax;
 	*h = hh->next;
-	free(hh);
-	(*h)->prev = NULL;
+	free(hh);	
 }
