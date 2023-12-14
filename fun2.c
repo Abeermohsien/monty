@@ -11,7 +11,6 @@
 void _exe(char *op, char *val, int len, int m)
 {
 	int i;
-	
 	int f;
 
 	instruction_t opst[] = {
@@ -27,7 +26,7 @@ void _exe(char *op, char *val, int len, int m)
 		{"rot2", rot2},
 		{"queue", add_queue},
 		{"rotr", rot2},
-		{"queue", add_queue},	
+		{"queue", add_queue},
 		{"div", _div},
 		{"mul", _mul},
 		{"mod", _mod},
@@ -35,8 +34,10 @@ void _exe(char *op, char *val, int len, int m)
 		{"pstr", p_str},
 		{NULL, NULL}
 	};
+
 	if (op[0] == '#')
 		return;
+
 	for (f = 1, i = 0; opst[i].opcode != NULL; i++)
 	{
 		if (strcmp(op, opst[i].opcode) == 0)
@@ -47,9 +48,9 @@ void _exe(char *op, char *val, int len, int m)
 	}
 	if (f == 1)
 	{
-	fprintf(stderr, "L%d: unknown instruction %s\n", len, op);
-	free_stack();
-	exit(EXIT_FAILURE);
+		fprintf(stderr, "L%d: unknown instruction %s\n", len, op);
+		free_stack();
+		exit(EXIT_FAILURE);
 	}
 }
 
@@ -58,14 +59,14 @@ void _exe(char *op, char *val, int len, int m)
  * @fun: fun
  * @oper: opertion
  * @val: value
- * @len: line number 
+ * @len: line number
  * @fr: format
  * Return: void
  */
 
 void f_call(op_func fun, char *oper, char *val, int len, int fr)
 {
-	stack_t *n,
+	stack_t *n;
 	int f;
 	int i;
 
@@ -99,7 +100,13 @@ void f_call(op_func fun, char *oper, char *val, int len, int fr)
 				fun(&n, len);
 					if (fr == 1)
 					add_queue(&n, len);
+<<<<<<< HEAD
 		}
 					else
 					fun(&head, len);
+=======
+	}
+		else
+			fun(&head, len);
+>>>>>>> 8c3b20733405d7330ad0f912de2f6a4a4c0833be
 }
