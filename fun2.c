@@ -10,18 +10,22 @@
  */
 void _exe(char *op, char *val, int len, int m)
 {
-	int i, f;
+	int i;
+	
+	int f;
 
 	instruction_t opst[] = {
 		{"push", _push},
 		{"pall", _pall},
-		{"pint", _print},
+		{"print", _print},
 		{"pop", _pop},
 		{"swap", _swap},
 		{"add", _add},
 		{"nop", _nop},
 		{"sub", _sub},
 		{"rotl", rot1},
+		{"rot2", rot2},
+		{"queue", add_queue},
 		{"rotr", rot2},
 		{"queue", add_queue},
 		{"div", _div},
@@ -83,6 +87,8 @@ void f_call(op_func fun, char *oper, char *val, int len, int fr)
 		}
 		for (i = 0; val[i] != '\0'; i++)
 		{
+			if (isdigit(val[i] == 0))
+				{
 			if (isdigit(val[i]) == 0)
 					{
 				fprintf(stderr, "L%d: usage: push integer\n", len);
