@@ -24,9 +24,9 @@ void o_file(char *fn)
  * Return: void
  */
 
-void read_f(FILE *df) 
+void read_f(FILE *df)
 {
-	int n, m = 0; 
+	int n, m = 0;
 	char *f = NULL;
 	size_t length = 0;
 
@@ -69,9 +69,9 @@ int p_line(char *buf, int n, int m)
 }
 
 /**
- * _exe: exeution 
+ * _exe: exeution
  * @op: op
- * @val: value 
+ * @val: value
  * @m: format
  * @len: line number
  * Return: void
@@ -119,10 +119,10 @@ void _exe(char *op, char *val, int len, int m)
 /**
  * f_call - Calls the required function.
  * @fun: function
- * @op: oper 
+ * @op: oper
  * @val: numer value.
  * @len: line numeber
- * @m: Format 
+ * @m: Format
  */
 void call_fun(op_func fun, char *op, char *val, int len, int m)
 {
