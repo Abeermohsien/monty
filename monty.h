@@ -1,11 +1,10 @@
 #ifndef MONTY_H
 #define MONTY_H
-
+#define _GNU_SOURCE
 #include <stdio.h>
 #include <stdlib.h>
-#include <sys/types.h>
+#include <stdarg.h> 
 #include <unistd.h>
-#include <fcntl.h>
 #include <string.h>
 #include <ctype.h>
 
@@ -44,25 +43,23 @@ typedef void (*op_func)(stack_t **, unsigned int);
 void _print(stack_t **h, unsigned int c);
 void _pall(stack_t **h, unsigned int c);
 void _push(stack_t **h, __attribute__((unused)) unsigned int c);
-void open_file(char *fn);
+void o_file(char *fn);
 void read_f(FILE *df);
 int _exe(char *op, char *val, int len, int m);
 int p_line(char *buf, int n, int m);
-void f_call(op_func f, char *oper, char *val, int len, int fr);
-void rot1(stack_t **h, __attribute__((unused)) unsigned int n);
-void rot2(stack_t **h, __attribute__((unused)) unsigned int c);
+void f_call(op_func fun, char *oper, char *val, int len, int fr);
+void rot1(stack_t **h, __attribute__((unused))unsigned int n);
+void rot2(stack_t **h, __attribute__((unused))unsigned int c);
 void _mul(stack_t **h, unsigned int c);
 void _mod(stack_t **h, unsigned int c);
 void free_stack(void);
-void add_node(int n);
-void add_queue(stack_t **h, __attribute__((unused)) unsigned int n);
+stack_t *add_node(int n);
+void add_queue(stack_t **h, __attribute__((unused))unsigned int n);
 void _swap(stack_t **h, unsigned int n);
-void _sub(stack_t **h, unsigned int n);
-void print_top(stack_t **h, unsigned int n);
-void _queue(stack_t **h, unsigned int c);
-void p_str(stack_t **stack, __attribute__((unused))unsigned int ln);
+void _sub(stack_t **h, unsigned int n); 
+void p_str(stack_t **tack, __attribute__((unused))unsigned int n);
 void _pop(stack_t **h, unsigned int c);
-void _pchar(stack_t **stack, unsigned int ln);
+void _pchar(stack_t **tack, unsigned int n);
 void _nop(stack_t **h, unsigned int c);
 int main(int argc, char *argv[]);
 void _div(stack_t **h, unsigned int c);

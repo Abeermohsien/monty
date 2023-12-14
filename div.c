@@ -21,7 +21,7 @@ void _div(stack_t **h, unsigned int c)
 	if (i->n == 0)
 	{
 		fprintf(stderr, "L%d: division by zero\n", c);
-		free_stack(*h);
+		free_stack();
 		exit(EXIT_FAILURE);
 	}
 	ax = i->next->n / i->n;

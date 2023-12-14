@@ -22,5 +22,5 @@ void add_queue(stack_t **h, __attribute__((unused))unsigned int n)
 		ax = ax->next;
 
 	ax->next = *h;
-	h->prev = ax;
+	(*h)->prev = ax;
 }

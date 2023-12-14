@@ -54,9 +54,8 @@ int p_line(char *buf, int n, int m)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
 		free_stack();
-		exit(EXIT_FAILURE
-				};
-				}
+		exit(EXIT_FAILURE);
+	}	
 				op = strtok(buf, del);
 				if (op == NULL)
 				return (m);

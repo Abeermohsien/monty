@@ -4,7 +4,7 @@
  * @n: int
  * Return: void
  */
-void add_node(int n)
+stack_t *add_node(int n)
 {
 	stack_t *node;
 
