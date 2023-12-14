@@ -2,21 +2,21 @@
 
 /**
  * p_str - prints a string
- * @stack: pointer to pointer pointing top node of stack
- * @ln: integer representing line number fo opcode.
+ * @tack: pointer
+ * @n: int
  */
-void p_str(stack_t **stack, __attribute__((unused))unsigned int ln)
+void p_str(stack_t **tack, __attribute__((unused))unsigned int n)
 {
 	int sc;
 	stack_t *t;
 
-	if (stack == NULL || *stack == NULL)
+	if (tack == NULL || *tack == NULL)
 	{
 		printf("\n");
 		return;
 	}
 
-	t = *stack;
+	t = *tack;
 	while (t != NULL)
 	{
 		sc = t->n;
