@@ -17,7 +17,7 @@ void _mul(stack_t **h, unsigned int c)
 		free_stack();
 		exit(EIXT_FAILURE);
 	}
-	i = *head;
+	i = *h;
 	ax = i->next->n * i->n;
 	i->next->n = ax;
 	*h = i->next;
