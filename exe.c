@@ -39,7 +39,7 @@ void read_f(FILE *df)
 
 
 /**
- * parse_line - line into tokens
+ * p_line - line into tokens
  * @buf: line
  * @n: line number
  * @m: format.
@@ -69,7 +69,7 @@ int p_line(char *buf, int n, int m)
 }
 
 /**
- * _exe: exeution
+ * _exe - exeution file
  * @op: op
  * @val: value
  * @m: format
@@ -117,7 +117,7 @@ void _exe(char *op, char *val, int len, int m)
 
 
 /**
- * f_call - Calls the required function.
+ * call_fun - Calls the required function.
  * @fun: function
  * @op: oper
  * @val: numer value.
