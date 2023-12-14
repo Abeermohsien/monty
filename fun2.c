@@ -15,21 +15,21 @@ int _exe(char *op, char *val, int len, int m)
 	instruction_t opst[] = {
 		{"push", _push},
 		{"pall", _pall},
-		{"pint", _pint},
+		{"print", _print},
 		{"pop", _pop},
 		{"swap", _swap},
 		{"add", _add},
 		{"nop", _nop},
 		{"sub", _sub},
-		{"rotl", _rot1},
-		{"rotr", _rot2},
-		{"queue", _queue},
-		{"stack", print_top},
+		{"rotl", rot1},
+		{"rot2", rot2},
+		{"queue", add_queue},
+		{"print_top", print_top},
 		{"div", _div},
 		{"mul", _mul},
 		{"mod", _mod},
 		{"pchar", _pchar},
-		{"pstr", _pstr},
+		{"pstr", p_str},
 		{NULL, NULL}
 	};
 	if (op[0] == '#')
@@ -80,8 +80,8 @@ void f_call(op_func fun, char *oper, char *val, int len, int fr)
 		}
 		for (i = 0; val[i] != '\0'; i++)
 		{
-			if (isdigit(val[i] == 0)
-					{
+			if (isdigit(val[i] == 0))
+				{
 				fprintf(stderr, "L%d: usage: push integer\n", len);
 				free_stack();
 				exit(EXIT_FAILURE);
