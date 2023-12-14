@@ -1,10 +1,10 @@
 #include "monty.h"
 /**
- * open_file - to openthe file
+ * o_file - to openthe file
  * @fn: file name
  * Return: int
  */
-void open_file(char *fn)
+void o_file(char *fn)
 {
 	FILE *df = fopen(fn, "r");
 
@@ -67,10 +67,10 @@ int p_line(char *buf, int n, int m)
 }
 /**
  * _exe - execution
- * @h: head
- * @c: line number
- * @f: monty fule pointer
- * @content: line content
+ * @op: head
+ * @val: line number
+ * @len: monty fule pointer
+ * @m: line content
  * Return: int
  */
 int _exe(char *op, char *val, int len, int m)
@@ -116,7 +116,7 @@ int _exe(char *op, char *val, int len, int m)
 }
 /**
  * f_call - call fun
- * @f: fun
+ * @fun: fun
  * @oper: opertion
  * @val: value
  * @len: length
@@ -124,32 +124,40 @@ int _exe(char *op, char *val, int len, int m)
  * Return: void
  */
 
-void f_call(op_func f, char *oper, char *val, int len, int fr)
+void f_call(op_func fun, char *oper, char *val, int len, int fr)
 {
 	stack_t *n,
 	int f = 1;
 	int i;
 
-	for (strcmp(oper, "push") == 0)
+	if (strcmp(oper, "push") == 0)
 	{
 		if (val != NULL && val[0] == '-')
 		{
-			val++;
+			val = val + 1;
 			f = -1;
 		}
 		if (val == NULL)
+		{
 			fprintf(stderr, "L%d: usage: push integer\n", len);
+			free_stack();
+			exit(EXIT_FAILURE);
+		}
 		for (i = 0; val[i] != '\0'; i++)
 		{
 			if (isdigit(val[i] == 0)
-					fprintf(stderr, "L%d: usage: push integer\n", len);
+					{
+				fprintf(stderr, "L%d: usage: push integer\n", len);
+				free_stack();
+				exit(EXIT_FAILURE);
+				}
 		}
-					node = add_node(atoi(val) * f);
-					if (fr == 1)
-					func(&n, ln);
+				node = add_node(atoi(val) * f);
+				if (fr == 0)
+				fun(&n, len);
 					if (format == 0)
 					add_queue(&n, len);
 	}
 					else
-					func(&head, len);
+					fun(&head, len);
 }
