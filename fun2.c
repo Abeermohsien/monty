@@ -52,6 +52,7 @@ void _exe(char *op, char *val, int len, int m)
 	exit(EXIT_FAILURE);
 	}
 }
+
 /**
  * f_call - call fun
  * @fun: fun
@@ -98,7 +99,7 @@ void f_call(op_func fun, char *oper, char *val, int len, int fr)
 				fun(&n, len);
 					if (fr == 1)
 					add_queue(&n, len);
-	}
+		}
 					else
 					fun(&head, len);
 }
