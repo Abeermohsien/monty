@@ -41,5 +41,5 @@ int main(int ac, char *av[])
 	}
 	free_stack(sk);
 	fclose(file);
-return (0);
+	return (0);
 }

@@ -8,7 +8,6 @@
 #include <fcntl.h>
 #include <string.h>
 #include <ctype.h>
-#define _POSIX_C_SOURCE 200809L
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -34,8 +33,8 @@ typedef struct stack_s
  */
 typedef struct st_s
 {
-	FILE *file;
 	char *arg;
+	FILE *file;
 	char *content;
 	int lifi;
 } st_t;
@@ -55,13 +54,10 @@ typedef struct instruction_s
 } instruction_t;
 void add_node(stack_t **h, int n);
 void _pall(stack_t **h, unsigned int n);
-char *_realloc(char *ptr, unsigned int old_size, unsigned int new_size);
-ssize_t getstdin(char **lineptr, int file);
-char  *clean_line(char *content);
 void _push(stack_t **h, unsigned int c);
 void _pall(stack_t **h, unsigned int c);
 void _pint(stack_t **h, unsigned int c);
-int _exe(char *content, stack_t **h, unsigned int c, FILE *f);
+int _exe(char *content, stack_t **stack, unsigned int counter, FILE *file)
 void free_stack(stack_t *h);
 void _pop(stack_t **h, unsigned int c);
 void _swap(stack_t **h, unsigned int n);
@@ -73,4 +69,6 @@ void _rot2(stack_t **h, __attribute__((unused)) unsigned int c);
 void add_queue(stack_t **h, int n);
 void _queue(stack_t **h, unsigned int c);
 void print_top(stack_t **h, unsigned int n);
+void _div(stack_t **h, unsigned int c);
+void _mod(stack_t **h, unsigned int c)
 #endif
