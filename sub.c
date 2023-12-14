@@ -10,6 +10,14 @@ void _sub(stack_t **h, unsigned int n)
 	int node, i;
 	stack_t *tmp;
 
+	if (h == NULL || *h == NULL || (*h)->next == NULL)
+	{
+		fprintf(stderr, "L%d: can't sub, stack too short", n);
+		fclose(st.file);
+		free(st.content);
+		free_stack(*h);
+		exit(EXIT_FAILURE);
+	}
 	tmp = *h;
 	for (node = 0; tmp != NULL; node++)
 		tmp = tmp->next;
@@ -26,4 +34,5 @@ void _sub(stack_t **h, unsigned int n)
 	tmp->next->n = i;
 	*h = tmp->next;
 	free(tmp);
+	(*h)->prev = NULL;
 }

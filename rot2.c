@@ -9,14 +9,16 @@ void _rot2(stack_t **h, __attribute__((unused))unsigned int c)
 {
 	stack_t *cpy;
 
-	cpy = *h;
-	if (*h == NULL || (*h)->next == NULL)
+	if (h == NULL || *h == NULL || (*h)->next == NULL)
 		return;
+	cpy = *h;
+
 	while (cpy->next != NULL)
 		cpy = cpy->next;
+
 	cpy->next = *h;
-	cpy->prev = NULL;
 	cpy->prev->next = NULL;
+	cpy->prev = NULL;
 	(*h)->prev = cpy;
 	(*h) = cpy;
 }

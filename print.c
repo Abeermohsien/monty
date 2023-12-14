@@ -7,9 +7,9 @@
 */
 void _pint(stack_t **h, unsigned int c)
 {
-	if (*h == NULL)
+	if (h == NULL || *h == NULL)
 	{
-		fprintf(stderr, "L%u: can't pint, stack empty\n", c);
+		fprintf(stderr, "L%d: can't pint, stack empty\n", c);
 		fclose(st.file);
 		free(st.content);
 		free_stack(*h);

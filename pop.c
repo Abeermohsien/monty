@@ -10,9 +10,9 @@ void _pop(stack_t **h, unsigned int c)
 {
 	stack_t *hh;
 
-	if (*h == NULL)
+	if (h == NULL || *h == NULL)
 	{
-		fprintf(stderr, "L%d: can't pop an empty stack\n", c);
+		fprintf(stderr, "L%d: can't pop an empty stack", c);
 		fclose(st.file);
 		free(st.content);
 		free_stack(*h);
@@ -20,5 +20,7 @@ void _pop(stack_t **h, unsigned int c)
 	}
 	hh = *h;
 	*h = hh->next;
+	if (*h != NULL)
+		(*h)->prev = NULL;
 	free(hh);
 }
