@@ -10,7 +10,7 @@ void _add(stack_t **h, unsigned int c)
 {
 	stack_t *hh;
 	int l = 0, ax;
-	
+
 	hh = *h;
 	while (hh)
 	{
@@ -29,5 +29,5 @@ void _add(stack_t **h, unsigned int c)
 	ax = hh->n + hh->next->n;
 	hh->next->n = ax;
 	*h = hh->next;
-	free(hh);	
+	free(hh);
 }
