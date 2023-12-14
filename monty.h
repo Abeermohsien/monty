@@ -3,7 +3,7 @@
 #define _GNU_SOURCE
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdarg.h> 
+#include <stdarg.h>
 #include <unistd.h>
 #include <string.h>
 #include <ctype.h>
@@ -19,11 +19,11 @@
  */
 typedef struct stack_s
 {
-        int n;
-        struct stack_s *prev;
-        struct stack_s *next;
+	int n;
+	struct stack_s *prev;
+	struct stack_s *next;
 } stack_t;
- 
+
 /**
  * struct instruction_s - opcode and its function
  * @opcode: the opcode
@@ -41,7 +41,7 @@ typedef struct instruction_s
 extern stack_t *head;
 typedef void (*op_func)(stack_t **, unsigned int);
 
-void _print(stack_t **h, unsigned int c);
+void _pint(stack_t **h, unsigned int c);
 void _pall(stack_t **h, unsigned int c);
 void _push(stack_t **h, __attribute__((unused)) unsigned int c);
 void o_file(char *fn);
@@ -57,7 +57,7 @@ void free_stack(void);
 stack_t *add_node(int n);
 void add_queue(stack_t **h, __attribute__((unused))unsigned int n);
 void _swap(stack_t **h, unsigned int n);
-void _sub(stack_t **h, unsigned int n); 
+void _sub(stack_t **h, unsigned int n);
 void p_str(stack_t **tack, __attribute__((unused))unsigned int n);
 void _pop(stack_t **h, unsigned int c);
 void _pchar(stack_t **tack, unsigned int n);

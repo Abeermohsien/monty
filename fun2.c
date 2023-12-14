@@ -16,7 +16,7 @@ void _exe(char *op, char *val, int len, int m)
 	instruction_t opst[] = {
 		{"push", _push},
 		{"pall", _pall},
-		{"print", _print},
+		{"pint", _pint},
 		{"pop", _pop},
 		{"swap", _swap},
 		{"add", _add},
@@ -87,20 +87,18 @@ void f_call(op_func fun, char *oper, char *val, int len, int fr)
 		for (i = 0; val[i] != '\0'; i++)
 		{
 			if (isdigit(val[i] == 0))
-				{
-			if (isdigit(val[i]) == 0)
-					{
+			{	
 				fprintf(stderr, "L%d: usage: push integer\n", len);
 				free_stack();
 				exit(EXIT_FAILURE);
-				}
+			}
 		}
-				n = add_node(atoi(val) * f);
-				if (fr == 0)
-				fun(&n, len);
-					if (fr == 1)
-					add_queue(&n, len);
+		n = add_node(atoi(val) * f);
+		if (fr == 0)
+			fun(&n, len);
+		if (fr == 1)
+			add_queue(&n, len);
 	}
-		else
-			fun(&head, len);
+	else
+		fun(&head, len);
 }
