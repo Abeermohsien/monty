@@ -20,29 +20,19 @@ void _queue(stack_t **h, unsigned int c)
  */
 void add_queue(stack_t **h, int n)
 {
-	stack_t *new_node, *ax;
+	stack_t *ax;
 
-	ax = *h;
-	new_node = malloc(sizeof(stack_t));
-	if (new_node == NULL)
+	if (ax == NULL || *ax == NULL)
+		exit(EXIT_FAILURE);
+	if (head == NULL)
 	{
-		printf("Error\n");
+		head = *ax;
+		return;
 	}
-	new_node->n = n;
-	new_node->next = NULL;
-	if (ax)
-	{
-		while (ax->next)
-			ax = ax->next;
-	}
-	if (!ax)
-	{
-		*h = new_node;
-		new_node->prev = NULL;
-	}
-	else
-	{
-		ax->next = new_node;
-		new_node->prev = ax;
-	}
+	ax = head;
+	while (ax->next != NULL)
+		ax = ax->next;
+	
+	ax->next = new_node;
+	new_node->prev = ax;	
 }
