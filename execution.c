@@ -11,16 +11,21 @@ void open_file(char *fn)
 	if (fn == NULL || df == NULL)
 	{
 		fprintf(stderr, "Error: Can't open file %s\n", fn);
-		free_node();
+		free_stack();
 		exit(EXIT_FAILURE);
 	}
 	read_f(df);
 	fclose(df);
 }
+/**
+ * read_f - read files
+ * @df: file pointer
+ * Return: void
+ */
 void read_f(FILE *df)
 {
 	int n, m = 0;
-	char *f= NULL;
+	char *f = NULL;
 	size_t length = 0;
 
 	for (n = 1; getline(&f, &length, df) != -1; n++)
@@ -29,7 +34,13 @@ void read_f(FILE *df)
 	}
 	free(f);
 }
-
+/**
+ * p_line - split lines
+ * @buf: buffer
+ * @n: line counter
+ * @m: format
+ * Return: int
+ */
 int p_line(char *buf, int n, int m)
 {
 	char *op, *val;
@@ -39,7 +50,7 @@ int p_line(char *buf, int n, int m)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
 		free_nodes();
-		exit(EXIT_FAILURE);
+		exit(EXIT_FAILURE};
 	}
 	op = strtok(buf, del);
 	if (op == NULL)
@@ -92,7 +103,7 @@ int _exe(char *op, char *val, int len, int m)
 	{
 		if (strcmp(op, opst[i].op) == 0)
 		{
-			f_call(opst[i].f( op, val,len , m);
+			f_call(opst[i].f, op, val,len , m);
 			f = 0;
 		}
 	}
@@ -113,9 +124,10 @@ int _exe(char *op, char *val, int len, int m)
 
 void f_call(op_func f, char *oper, char *val, int len, int fr)
 {
-	stack_t *n, *head;
+	stack_t *n,
 	int f = 1;
 	int i;
+	
 	for (strcmp(oper, "push") == 0)
 	{
 		if (val != NULL && val[0] == '-')

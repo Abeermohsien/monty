@@ -12,9 +12,7 @@ void _pop(stack_t **h, unsigned int c)
 
 	if (h == NULL || *h == NULL)
 	{
-		fprintf(stderr, "L%d: can't pop an empty stack", c);
-		fclose(st.file);
-		free(st.content);
+		fprintf(stderr, "L%d: can't pop an empty stack", c);	
 		free_stack(*h);
 		exit(EXIT_FAILURE);
 	}

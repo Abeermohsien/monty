@@ -6,40 +6,19 @@
  * @c: line number
  * Return: void
  */
-void _push(stack_t **h, unsigned int c)
+void _push(stack_t **h, __attribute__((unused))unsigned int c)
 {
-	int i, j = 0, f = 0;
+	stack_t *ptr;
 
-	if (st.arg)
-	{
-		if (st.arg[0] == '-')
-			j++;
-		for (; st.arg[j] != '\0'; j++)
-		{
-			if (st.arg[j] > 57 || st.arg[j] < 48)
-				f = 1;
-		}
-		if (f == 1)
-		{
-			fprintf(stderr, "L%d: usage: push integer\n", c);
-			fclose(st.file);
-			free(st.content);
-			free_stack(*h);
-			exit(EXIT_FAILURE);
-		}
-	}
-	else
-	{
-		fprintf(stderr, "L%d: usage: push integer\n", c);
-		fclose(st.file);
-		free(st.content);
-		free_stack(*h);
+	if (h == NULL || *h == NULL)
 		exit(EXIT_FAILURE);
+	if (head == NULL)
+	{
+		head = *h;
+		return;
 	}
-	i = atoi(st.arg);
-	if (st.lifi == 0)
-		add_node(h, i);
-	else
-		add_queue(h, i);
+	ptr = head;
+	head = *h;
+	head->next = ptr;
+	ptr->prev = head;
 }
-
